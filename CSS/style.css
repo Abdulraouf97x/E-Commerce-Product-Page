@@ -1,0 +1,329 @@
+/* General & Body Styling */
+:root {
+    --bg-dark: #0d0d0d;
+    --text-light: #f0f0f0;
+    --primary-accent: #00e6ff;
+    --secondary-accent: #222;
+    --shadow-color: rgba(0, 230, 255, 0.1); /* Reduced glow */
+    --hover-effect-duration: 0.4s;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.content-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Header & Navigation */
+.main-header {
+    background-color: var(--bg-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Reduced header shadow */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 2px solid var(--secondary-accent);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: transform var(--hover-effect-duration) ease;
+    text-shadow: 0 0 5px var(--primary-accent); /* Reduced text glow */
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(-1deg);
+    animation: none; /* Removed pulse animation */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 35px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color var(--hover-effect-duration) ease, transform var(--hover-effect-duration) ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-accent);
+    transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.main-nav a:hover::after, .main-nav a.active::after {
+    width: 100%;
+    box-shadow: none; /* Removed glow from underline */
+}
+
+.main-nav a:hover {
+    transform: translateY(-3px);
+    color: var(--primary-accent);
+    text-shadow: none; /* Removed text glow on hover */
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Gradients & Effects */
+#home { 
+    background: linear-gradient(135deg, #181818, #000); 
+    animation: background-pan 60s infinite alternate linear;
+    background-size: 200% 200%;
+}
+#about { background: linear-gradient(45deg, #222, #111); }
+#projects { background: linear-gradient(135deg, #111, #222); }
+#contact { background: linear-gradient(45deg, #0a0a0a, #181818); }
+
+@keyframes background-pan {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+/* Common Element Styling */
+h1, h2 {
+    color: var(--primary-accent);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+h1 { 
+    font-size: 4.5rem; 
+    text-shadow: 0 0 8px var(--primary-accent); /* Reduced glow */
+}
+h2 { 
+    font-size: 3rem; 
+    margin-bottom: 40px; 
+    text-shadow: 0 0 5px var(--primary-accent); /* Reduced glow */
+}
+
+.subtitle, .project-description {
+    font-size: 1.3rem;
+    color: #a8a8a8;
+    text-shadow: none; /* Removed text shadow */
+    line-height: 1.8;
+}
+
+.cta-button {
+    background-color: var(--primary-accent);
+    color: var(--bg-dark);
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform var(--hover-effect-duration) ease, box-shadow var(--hover-effect-duration) ease, background-color var(--hover-effect-duration) ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Regular shadow, not glow */
+    margin-top: 40px;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #00cce6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    animation: none; /* Removed button pulse animation */
+}
+
+/* About Section Specifics */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    border: 5px solid var(--primary-accent);
+    box-shadow: 0 0 10px rgba(0, 230, 255, 0.5); /* Reduced glow */
+    transition: transform 0.6s ease;
+    /* This line uses the local image path as provided in your HTML */
+    content: url('Img/profile.png');
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.profile-pic:hover {
+    transform: rotate(360deg) scale(1.05) brightness(1.1);
+    box-shadow: 0 0 20px rgba(0, 230, 255, 0.8); /* Slightly more glow on hover */
+}
+
+/* Projects Section Specifics */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: var(--secondary-accent);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Reduced shadow */
+    overflow: hidden;
+    transition: transform var(--hover-effect-duration) ease, box-shadow var(--hover-effect-duration) ease;
+    border: 1px solid var(--secondary-accent);
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+    background-color: #333;
+    border-color: var(--primary-accent);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+.project-card h3 {
+    color: var(--primary-accent);
+    font-size: 1.5rem;
+    margin: 25px 0 10px;
+    transition: color var(--hover-effect-duration) ease;
+}
+
+.project-card:hover h3 {
+    color: #fff;
+    text-shadow: none; /* Removed text glow on hover */
+}
+
+.project-card p {
+    color: #a8a8a8;
+    padding: 0 25px 25px;
+    font-size: 1.1rem;
+}
+
+/* Contact Section Specifics */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto 0;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-light);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 8px rgba(0, 230, 255, 0.4); /* Reduced glow */
+}
+
+/* JavaScript-Controlled Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly less movement */
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+    .section {
+        padding: 80px 0;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    .project-grid {
+        gap: 20px;
+    }
+    .cta-button {
+        padding: 15px 30px;
+    }
+}

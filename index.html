@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="#home" class="logo">My Portfolio</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section home-section">
+            <div class="content-wrapper">
+                <h1 class="animate-on-scroll">Hello, I'm a Front-End Developer.</h1>
+                <p class="subtitle animate-on-scroll">I build beautiful and functional web experiences.</p>
+                <br>
+                <a href="#projects" class="cta-button animate-on-scroll">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="content-wrapper">
+                <h2 class="animate-on-scroll">About Me</h2>
+                <div class="about-content">
+                    <img src="Img/profile.png" alt="Your Photo" style="width: 500px; height: 550px;">
+                    <p class="animate-on-scroll" style="font-size: 22px; color: rgb(0, 238, 255);">I am a passionate front-end developer with a focus on creating dynamic and user-friendly websites. I have a strong command of HTML5, CSS3, and modern JavaScript, and I'm always eager to learn and implement new technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="content-wrapper">
+                <h2 class="animate-on-scroll">My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card animate-on-scroll">
+                        <img src="Img/online-shopping-concept-free-photo.jpg" alt="Project 1">
+                        <h3>E-Commerce Store</h3>
+                        <p class="project-description">A full front-end implementation of a modern e-commerce platform with dynamic product pages and a responsive design.</p>
+                    </div>
+                    <div class="project-card animate-on-scroll">
+                        <img src="Img/10-startit-dark-landing-page-template@2x.png" alt="Project 2">
+                        <h3>To-Do List App</h3>
+                        <p class="project-description">An interactive web application for managing daily tasks with a clean user interface and local storage functionality.</p>
+                    </div>
+                    <div class="project-card animate-on-scroll">
+                        <img src="Img/OIP.webp" alt="Project 3">
+                        <h3>Product Landing Page</h3>
+                        <p class="project-description">A sleek and responsive landing page for a digital product, designed to convert visitors into customers with subtle animations.</p>
+                    </div>
+                    <div class="project-card animate-on-scroll">
+                        <img src="Img/OIP (1).webp" alt="Project 4">
+                        <h3>Weather Dashboard</h3>
+                        <p class="project-description">A real-time weather application that fetches data from an API and displays it in an intuitive and modern interface.</p>
+                    </div>
+                    <div class="project-card animate-on-scroll">
+                        <img src="Img/e8c8b0adfadbc97aa96ff53e7392738e.jpg" alt="Project 5">
+                        <h3>Portfolio Website</h3>
+                        <p class="project-description">A personal portfolio built from scratch to showcase front-end skills, featuring smooth scrolling and animations.</p>
+                    </div>
+                    <div class="project-card animate-on-scroll">
+                        <img src="Img/interior-of-a-restaurant-ai-generated-free-photo.jpg" alt="Project 6">
+                        <h3>Restaurant Menu</h3>
+                        <p class="project-description">A dynamic menu page for a restaurant with filtering options and an elegant design to highlight dishes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="content-wrapper">
+                <h2 class="animate-on-scroll">Get in Touch</h2>
+                <p class="animate-on-scroll">I'd love to hear from you. Feel free to reach out for collaborations or just a chat!</p>
+                <form class="contact-form animate-on-scroll">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <script src="JS/main.js"></script>
+</body>
+</html>
